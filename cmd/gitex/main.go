@@ -11,12 +11,15 @@ import (
 	"github.com/AlexFabre/gitex/internal/gitlab"
 )
 
+var version = "dev"
+
 func main() {
 	rootCmd := &cobra.Command{
-		Use:   "gitex",
-		Short: "Extract content from GitLab and generate local markdown documents",
-		Long: `gitlex is a CLI tool that fetches issues, merge requests, and other
+		Use:     "gitex",
+		Short:   "Extract content from GitLab and generate local markdown documents",
+		Long:    `gitlex is a CLI tool that fetches issues, merge requests, and other
 content from a GitLab repository and generates local markdown documents.`,
+		Version: version,
 	}
 
 	config.BindFlags(rootCmd)

@@ -1,5 +1,5 @@
 BINARY_NAME=gitex
-VERSION?=dev
+VERSION?=$(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
 BUILD_DIR=build
 
 LDFLAGS=-ldflags "-s -w -X main.version=$(VERSION)"
